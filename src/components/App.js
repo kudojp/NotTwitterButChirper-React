@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { handleInitialData } from '../actions/shared'
 
 class App extends Component {
+  componentDidMount() {
+    this.props.dispatch(handleInitialData())
+  }
+
   render() {
     return (
       <div>
@@ -10,4 +16,7 @@ class App extends Component {
   }
 }
 
-export default App
+// mapStateToPropsとmapDispatchToPropsのどちらも引数に渡されていないので、
+// 全てのstateにAppからアクセスできる？
+// dispatchはどうだろう？
+export default connect()(App)
