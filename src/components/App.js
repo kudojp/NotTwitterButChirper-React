@@ -11,13 +11,18 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Dashboard />
+        { this.props.loading === true
+          ? null
+          : <Dashboard />}
       </div>
     )
   }
 }
 
-// mapStateToPropsとmapDispatchToPropsのどちらも引数に渡されていないので、
-// 全てのstateにAppからアクセスできる？
-// dispatchはどうだろう？
-export default connect()(App)
+function mapStateToProps({ authedUser }) {
+  return {
+    loading: authedUser === null
+  }
+}
+
+export default connect(mapStateToProps)(App)
