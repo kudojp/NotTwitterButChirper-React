@@ -24,7 +24,7 @@ class TweetPage extends Component {
 }
 
 function mapStateToProps({ authedUser, tweets, users }, props) {
-  const { id } = props.match.props // これが特定のtweetへの返信だった場合のみ、そのtweetのid
+  const { id } = props.match.params // これが特定のtweetへの返信だった場合のみ、そのtweetのid
 
   return {
     id,

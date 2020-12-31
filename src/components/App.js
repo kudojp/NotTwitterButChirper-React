@@ -27,7 +27,6 @@ class App extends Component {
                 <Route path='/tweet/:id' component={TweetPage} />
                 <Route path='/new' component={NewTweet} />
                 </div>
-              // <NewTweet match={{ params: { id: '8xf0y6ziyjabvozdd253nd' } }} />
             }
           </div>
         </Fragment>
